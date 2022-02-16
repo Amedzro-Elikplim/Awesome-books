@@ -1,12 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="preload"
+      as="style"
+      onload="this.onload = null; this.rel = 'stylesheet'"
+      href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500&display=swap"
+    />
     <title>Awesome Books</title>
-</head>
-<body>
-     <h1>Awesome books</h1>
-</body>
+  </head>
+  <body>
+    <section class="books-section">
+      <div>Display books</div>
+    </section>
+
+    <section class="form-section">
+      <form action="" class="form">
+        <div>
+          <label for="title"></label>
+          <input type="text" name="title" placeholder="title" class="title" />
+        </div>
+
+        <div>
+          <label for="author"></label>
+          <input type="text" name="author" placeholder="author" class="author" />
+        </div>
+
+        <div>
+            <label for="add"></label>
+            <button type="submit" name="add" placeholder="Add" class="add-button"> add </button>
+        </div>
+
+      </form>
+    </section>
+  </body>
 </html>
