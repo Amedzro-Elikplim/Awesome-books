@@ -1,4 +1,4 @@
-import { Book, saveBook } from './Book.js';
+import { Book, saveBook, showBook } from './Book.js';
 
 const title = document.getElementById('title');
 const author = document.getElementById('author');
@@ -16,4 +16,5 @@ add.addEventListener('click', (e) => {
 
   const book = new Book(Title, Author);
   saveBook(book);
+  showBook(book);
 });
