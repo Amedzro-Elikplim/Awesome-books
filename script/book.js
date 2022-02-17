@@ -1,6 +1,7 @@
 const data = localStorage.getItem('bookInfo');
 const arr = data ? JSON.parse(data) : [];
 const booksDiv = document.querySelector('.books-div');
+// booksDiv.className = 'book-parent-div';
 
 function Book(title, author) {
   this.title = title;
@@ -24,7 +25,6 @@ function RemoveBook(title) {
 
   books.splice(index, 1);
   books = JSON.stringify(books);
-
   localStorage.setItem('bookInfo', books);
 
   RemoveAllChildNodes(booksDiv);
@@ -38,11 +38,20 @@ function BookTemplate(bookInfo) {
   const li1 = document.createElement('li');
   const li2 = document.createElement('li');
   const button = document.createElement('button');
+  const div = document.createElement('div');
 
-  li1.innerHTML = title;
+  ul.className = 'list';
+  li1.className = 'book-title';
+  li2.className = 'book-author';
+  div.className = 'list-div';
+  button.className = 'remove-button';
+
+  li1.innerHTML = `"${title}" by`;
   li2.innerHTML = author;
-  button.innerHTML = 'Remove';
-  ul.append(li1, li2, button);
+  button.innerHTML = 'remove';
+
+  div.append(li1, li2);
+  ul.append(div, button);
 
   button.addEventListener('click', (e) => {
     e.preventDefault();

@@ -18,6 +18,7 @@ add.addEventListener('click', (e) => {
   const Author = author.value;
 
   if (Title === '' || Author === '') {
+    // eslint-disable-next-line no-alert
     alert('please fill all fields');
     return;
   }
