@@ -2,11 +2,15 @@ import {
   Book,
   SaveBook,
   ShowBook,
+  showAllBooks,
+// eslint-disable-next-line import/extensions
 } from './Book.js';
 
 const title = document.getElementById('title');
 const author = document.getElementById('author');
 const add = document.getElementById('add');
+
+showAllBooks();
 
 add.addEventListener('click', (e) => {
   e.preventDefault();
@@ -22,4 +26,6 @@ add.addEventListener('click', (e) => {
   SaveBook(book);
   ShowBook(book);
 
+  title.value = '';
+  author.value = '';
 });

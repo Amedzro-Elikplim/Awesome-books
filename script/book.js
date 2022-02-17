@@ -12,6 +12,12 @@ function SaveBook(bookInfo) {
   localStorage.setItem('bookInfo', JSON.stringify(arr));
 }
 
+function RemoveAllChildNodes(parent) {
+  while (parent.firstChild) {
+    parent.removeChild(parent.firstChild);
+  }
+}
+
 function RemoveBook(title) {
   let books = JSON.parse(localStorage.getItem('bookInfo'));
   const index = books.findIndex((item) => item.title === title);
@@ -20,6 +26,10 @@ function RemoveBook(title) {
   books = JSON.stringify(books);
 
   localStorage.setItem('bookInfo', books);
+
+  RemoveAllChildNodes(booksDiv);
+  // eslint-disable-next-line no-use-before-define
+  showAllBooks();
 }
 
 function BookTemplate(bookInfo) {
@@ -46,9 +56,17 @@ function ShowBook(bookInfo) {
   booksDiv.appendChild(BookTemplate(bookInfo));
 }
 
+function showAllBooks() {
+  const data = JSON.parse(localStorage.getItem('bookInfo'));
+
+  data.forEach((element) => {
+    ShowBook(element);
+  });
+}
+
 export {
   Book,
   SaveBook,
   ShowBook,
-  RemoveBook,
+  showAllBooks,
 };
