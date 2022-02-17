@@ -24,7 +24,7 @@ add.addEventListener('click', (e) => {
   }
 
   const book = new Book(Title, Author);
-  SaveBook(book, e);
+  SaveBook(book);
   ShowBook(book);
 
   title.value = '';
