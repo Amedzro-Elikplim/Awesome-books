@@ -65,9 +65,10 @@ function ShowBook(bookInfo) {
 }
 
 function showAllBooks() {
-  const data = JSON.parse(window.localStorage.getItem('bookInfo'));
+  const data = window.localStorage.getItem('bookInfo');
+  const arr = data ? JSON.parse(data) : [];
 
-  data.forEach((element) => {
+  arr.forEach((element) => {
     ShowBook(element);
   });
 }
