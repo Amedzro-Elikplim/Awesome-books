@@ -13,11 +13,16 @@
       onload="this.onload = null; this.rel = 'stylesheet'"
       href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500&display=swap"
     />
+    <link
+      rel="preload"
+      as="style" 
+      onload="this.onload = null; this.rel = 'stylesheet'"
+      href="https://fonts.googleapis.com/css2?family=Kurale&display=swap">
     <title>Awesome Books</title>
   </head>
   <body>
     <section class="books-section">
-      <div class="books-div">list of books</div>
+      <div class="books-div"></div>
     </section>
 
     <section class="form-section">
@@ -34,7 +39,7 @@
 
         <div>
             <label for="add"></label>
-            <button type="submit" name="add" placeholder="Add" class="add-button" id="add"> add </button>
+            <button type="submit" name="add" placeholder="Add" class="add-button" id="add"> Save book </button>
         </div>
 
       </form>
