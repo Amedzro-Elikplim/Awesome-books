@@ -89,6 +89,17 @@ body {
   padding: 10px;
 }
 
+.new-book {
+  font-family: Raleway, sans-serif;
+  font-weight: bold;
+}
+
+.awesome-books {
+  font-family: Raleway, sans-serif;
+  font-weight: bold;
+  color: rgb(39, 38, 38);
+}
+
 .title {
   box-shadow: 1px 1px 5px rgb(205, 206, 207);
   border: 1px solid rgb(176, 215, 248);
