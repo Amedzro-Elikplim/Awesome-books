@@ -4,7 +4,7 @@ import {
   ShowBook,
   showAllBooks,
 // eslint-disable-next-line import/extensions
-} from './Book.js';
+} from './book.js';
 
 const title = document.getElementById('title');
 const author = document.getElementById('author');
