@@ -1,7 +1,6 @@
 const data = localStorage.getItem('bookInfo');
 const arr = data ? JSON.parse(data) : [];
 const booksDiv = document.querySelector('.books-div');
-// booksDiv.className = 'book-parent-div';
 
 function Book(title, author) {
   this.title = title;
