@@ -9,7 +9,6 @@ body {
   background-color: rgb(155, 197, 235);
 }
 
-
 .list {
   display: flex;
   list-style-type: none;
@@ -63,7 +62,8 @@ body {
   font-family: Kurale, sans-serif;
   border-radius: 5px;
   font-weight: bold;
-  box-shadow: 1px 1px solid gray;
+  box-shadow: 1px 1px 5px gray;
+  cursor: pointer;
 }
 
 .form-section {
