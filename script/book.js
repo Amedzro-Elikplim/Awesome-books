@@ -7,27 +7,48 @@ function Book(title, author) {
   this.author = author;
 }
 
-function saveBook(bookInfo) {
+function SaveBook(bookInfo) {
   arr.push(bookInfo);
   localStorage.setItem('bookInfo', JSON.stringify(arr));
 }
 
-function bookTemplate(bookInfo) {
+function RemoveBook(title) {
+  let books = JSON.parse(localStorage.getItem('bookInfo'));
+  const index = books.findIndex((item) => item.title === title);
+
+  books.splice(index, 1);
+  books = JSON.stringify(books);
+
+  localStorage.setItem('bookInfo', books);
+}
+
+function BookTemplate(bookInfo) {
   const { title, author } = bookInfo;
-  const template = `
-     <div>
-         <ul>
-             <li>${title}</li>
-             <li>${author}</li>
-             <li><button>Remove</button></li>
-         </ul>
-      </div>
-  `;
-  return template;
+  const ul = document.createElement('ul');
+  const li1 = document.createElement('li');
+  const li2 = document.createElement('li');
+  const button = document.createElement('button');
+
+  li1.innerHTML = title;
+  li2.innerHTML = author;
+  button.innerHTML = 'Remove';
+  ul.append(li1, li2, button);
+
+  button.addEventListener('click', (e) => {
+    e.preventDefault();
+    RemoveBook(title);
+  });
+
+  return ul;
 }
 
-function showBook(bookInfo) {
-  booksDiv.innerHTML += bookTemplate(bookInfo);
+function ShowBook(bookInfo) {
+  booksDiv.appendChild(BookTemplate(bookInfo));
 }
 
-export { Book, saveBook, showBook };
+export {
+  Book,
+  SaveBook,
+  ShowBook,
+  RemoveBook,
+};
