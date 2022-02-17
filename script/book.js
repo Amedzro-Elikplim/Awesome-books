@@ -7,7 +7,8 @@ function Book(title, author) {
   this.author = author;
 }
 
-function SaveBook(bookInfo) {
+function SaveBook(bookInfo, e) {
+  e.preventDefault();
   arr.push(bookInfo);
   localStorage.setItem('bookInfo', JSON.stringify(arr));
 }
