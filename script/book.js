@@ -12,22 +12,19 @@ function SaveBook(bookInfo) {
   window.localStorage.setItem('bookInfo', JSON.stringify(arr));
 }
 
-function RemoveAllChildNodes(parent) {
-  while (parent.firstChild) {
-    parent.removeChild(parent.firstChild);
-  }
-}
-
 function RemoveBook(title) {
   let books = JSON.parse(window.localStorage.getItem('bookInfo'));
   const index = books.findIndex((item) => item.title === title);
 
+  arr.splice(index, 1);
   books.splice(index, 1);
+
   books = JSON.stringify(books);
   window.localStorage.setItem('bookInfo', books);
 
-  RemoveAllChildNodes(booksDiv);
-  showAllBooks();
+  if (booksDiv.hasChildNodes()) {
+    booksDiv.removeChild(booksDiv.children[index]);
+  }
 }
 
 function BookTemplate(bookInfo) {
