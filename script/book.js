@@ -27,7 +27,6 @@ function RemoveBook(title) {
   window.localStorage.setItem('bookInfo', books);
 
   RemoveAllChildNodes(booksDiv);
-  // eslint-disable-next-line no-use-before-define
   showAllBooks();
 }
 

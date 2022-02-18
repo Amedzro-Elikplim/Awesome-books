@@ -3,7 +3,6 @@ import {
   SaveBook,
   ShowBook,
   showAllBooks,
-// eslint-disable-next-line import/extensions
 } from './book.js';
 
 const title = document.getElementById('title');
