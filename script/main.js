@@ -5,7 +5,6 @@ const author = document.getElementById('author');
 const add = document.getElementById('add');
 
 const book = new Book();
-book.showAllBooks();
 
 add.addEventListener('click', (e) => {
   e.preventDefault();
@@ -23,7 +22,6 @@ add.addEventListener('click', (e) => {
   }
 
   book.SaveBook(newBook);
-  book.ShowBook(newBook);
 
   title.value = '';
   author.value = '';
