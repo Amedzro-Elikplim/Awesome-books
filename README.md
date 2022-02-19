@@ -34,8 +34,10 @@ To get a local copy up and running follow these simple example steps.
 ### Setup
 
 - clone repository using `git clone`
+- git clone `https://github.com/Amedzro-Elikplim/Awesome-books.git`
+- cd `Awesome-books`.
 - run `npm install`
-- run `live server`
+- open `index.html file`
 
 ## Author
 
