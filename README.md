@@ -2,7 +2,7 @@
 
 # Awesome Books
 
-> A simple Todo app to add list of books a user has read. 
+> A simple Todo app to add list of books a user has read. It is implemented using JavaScript object and classes. A todo is saved and displayed in Realtime. A todo can be removed from the list of to-dos. Data persistence is implemented using local Storage API
 
 ![screenshot](./image.JPG)
 
@@ -34,10 +34,12 @@ To get a local copy up and running follow these simple example steps.
 ### Setup
 
 - clone repository using `git clone`
+- git clone `https://github.com/Amedzro-Elikplim/Awesome-books.git`
+- cd `Awesome-books`.
 - run `npm install`
-- run `live server`
+- open `index.html file`
 
-## Author1
+## Author
 
 👤 **Amedzro Elikplim Emmanuel**
 

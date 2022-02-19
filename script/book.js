@@ -1,7 +1,6 @@
 class Book {
   contructor() {
     this.data = 0;
-    this.temp = 0;
   }
 
   SaveBook(book) {
@@ -14,7 +13,6 @@ class Book {
   }
 
   RemoveBook(title) {
-    this.temp = 0;
     let books = JSON.parse(window.localStorage.getItem('bookInfo'));
     const index = books.findIndex((item) => item.title === title);
     const booksDiv = document.querySelector('.books-div');
@@ -66,7 +64,6 @@ class Book {
   }
 
   showAllBooks() {
-    this.temp = 0;
     const data = window.localStorage.getItem('bookInfo');
     const arr = data ? JSON.parse(data) : [];
 
