@@ -22,7 +22,7 @@ add.addEventListener('click', (e) => {
   }
 
   book.SaveBook(newBook);
-
+  alert('book saved successuflly');
   title.value = '';
   author.value = '';
 });
