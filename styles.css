@@ -9,10 +9,15 @@ body {
   background-color: rgb(214, 236, 255);
 }
 
+.header {
+  width: 100vw;
+}
+
 .navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  width: 100vw;
   background-color: white;
   padding: 20px;
   box-shadow: 1px 1px 10px gray;
