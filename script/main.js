@@ -1,17 +1,11 @@
-// import {
-//   Book,
-//   SaveBook,
-//   ShowBook,
-//   showAllBooks,
-// } from './book.js';
-
 import Book from './book.js';
 
 const title = document.getElementById('title');
 const author = document.getElementById('author');
 const add = document.getElementById('add');
+
 const book = new Book();
-// showAllBooks();
+book.showAllBooks();
 
 add.addEventListener('click', (e) => {
   e.preventDefault();
@@ -28,10 +22,8 @@ add.addEventListener('click', (e) => {
     return;
   }
 
-  // const book = new Book(Title, Author);
-  // SaveBook(book);
   book.SaveBook(newBook);
-  book.ShowBook(book);
+  book.ShowBook(newBook);
 
   title.value = '';
   author.value = '';

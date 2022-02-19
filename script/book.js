@@ -1,52 +1,38 @@
-// const data = window.localStorage.getItem('bookInfo');
-// const arr = data ? JSON.parse(data) : [];
-// const booksDiv = document.querySelector('.books-div');
-
 class Book {
-  // data = window.localStorage.getItem('bookInfo');
-  // arr = data ? JSON.parse(data) : [];
-  // booksDiv = document.querySelector('.books-div');
   contructor() {
     this.data = 0;
     this.temp = 0;
   }
-
-  // loadBookInfo() {
-  //   const data = window.localStorage.getItem('bookInfo');
-  //   const arr = data ? JSON.parse(data) : [];
-  //   const booksDiv = document.querySelector('.books-div');
-  // }
 
   SaveBook(book) {
     this.data = window.localStorage.getItem('bookInfo');
     const arr = this.data ? JSON.parse(this.data) : [];
     arr.push(book);
     window.localStorage.setItem('bookInfo', JSON.stringify(arr));
+
+    return arr;
   }
 
-  // function SaveBook(bookInfo) {
-  //   arr.push(bookInfo);
-  //   window.localStorage.setItem('bookInfo', JSON.stringify(arr));
-  // }
-
-  // function RemoveBook(title) {
-  //   let books = JSON.parse(window.localStorage.getItem('bookInfo'));
-  //   const index = books.findIndex((item) => item.title === title);
-
-  //   arr.splice(index, 1);
-  //   books.splice(index, 1);
-
-  //   books = JSON.stringify(books);
-  //   window.localStorage.setItem('bookInfo', books);
-
-  //   if (booksDiv.hasChildNodes()) {
-  //     booksDiv.removeChild(booksDiv.children[index]);
-  //   }
-  // }
-
-  BookTemplate(bookInfo) {
+  RemoveBook(title) {
     this.temp = 0;
-    const { title, author } = bookInfo;
+    let books = JSON.parse(window.localStorage.getItem('bookInfo'));
+    const index = books.findIndex((item) => item.title === title);
+    const booksDiv = document.querySelector('.books-div');
+
+    const arr = this.SaveBook();
+    arr.splice(index, 1);
+    books.splice(index, 1);
+
+    books = JSON.stringify(books);
+    window.localStorage.setItem('bookInfo', books);
+
+    if (booksDiv.hasChildNodes()) {
+      booksDiv.removeChild(booksDiv.children[index]);
+    }
+  }
+
+  BookTemplate(book) {
+    const { title, author } = book;
     const ul = document.createElement('ul');
     const li1 = document.createElement('li');
     const li2 = document.createElement('li');
@@ -68,31 +54,25 @@ class Book {
 
     button.addEventListener('click', (e) => {
       e.preventDefault();
-      // RemoveBook(title);
+      this.RemoveBook(title);
     });
 
     return ul;
   }
 
-  ShowBook(bookInfo) {
+  ShowBook(book) {
     const booksDiv = document.querySelector('.books-div');
-    booksDiv.appendChild(this.BookTemplate(bookInfo));
+    booksDiv.appendChild(this.BookTemplate(book));
   }
 
-  // function showAllBooks() {
-  //   const data = window.localStorage.getItem('bookInfo');
-  //   const arr = data ? JSON.parse(data) : [];
+  showAllBooks() {
+    this.temp = 0;
+    const data = window.localStorage.getItem('bookInfo');
+    const arr = data ? JSON.parse(data) : [];
 
-  //   arr.forEach((element) => {
-  //     ShowBook(element);
-  //   });
-  // }
-
-  // export {
-  //   Book,
-  //   // showAllBooks,
-  //   // SaveBook,
-  //   // ShowBook,
-  // };
+    arr.forEach((element) => {
+      this.ShowBook(element);
+    });
+  }
 }
 export default Book;
