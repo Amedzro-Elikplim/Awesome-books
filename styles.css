@@ -42,7 +42,6 @@ body {
   cursor: pointer;
 }
 
-
 .link {
   text-decoration: none;
   color: rgb(51, 51, 51);
@@ -240,7 +239,6 @@ body {
   margin-left: 20px;
   font-family: Raleway, sans-serif;
 }
-
 
 @media (max-width: 768px) {
   .form-section {
