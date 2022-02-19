@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="preload"
+      as="style"
+      onload="this.onload = null; this.rel = 'stylesheet'"
+      href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500&display=swap"
+    />
+    <link
+      rel="preload"
+      as="style" 
+      onload="this.onload = null; this.rel = 'stylesheet'"
+      href="https://fonts.googleapis.com/css2?family=Kurale&display=swap">
+    <title>Awesome Books</title>
+  </head>
+  <body>
+    <header>
+      <nav class="navbar">
+        <h2>Awesome books</h2>
+        <ul class ="nav-list">
+          <li class="nav-link"><a class="link active" href="../index.html">List</a></li>
+          <li class="nav-link"> <a class="link" href="./form.html">Add New</a></li>
+          <li class="nav-link"> <a class="link" href="./contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <section class="form-section">
+      <h1 class="new-book">Add a new book</h1>
+      <form class="form">
+        <div>
+          <label for="title"></label>
+          <input type="text" name="title" placeholder="title" class="title" id="title" />
+        </div>
+
+        <div>
+          <label for="author"></label>
+          <input type="text" name="author" placeholder="author" class="author" id="author" />
+        </div>
+
+        <div>
+            <label for="add"></label>
+            <button type="submit" name="add" class="add-button" id="add"> Save book </button>
+        </div>
+
+      </form>
+    </section>
+
+    <script type="module" src="../script/main.js"></script>
+  </body>
+</html>
+
+     
